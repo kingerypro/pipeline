@@ -7,40 +7,73 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        body {
+            background-color: #f8f9fa;
+        }
         .chat-container {
             max-width: 600px;
             margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         .chat-box {
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border-top: 1px solid #ddd;
             padding: 10px;
             height: 400px;
             overflow-y: auto;
         }
         .chat-input {
-            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding: 10px;
         }
         .chat-message {
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 20px;
             margin-bottom: 10px;
+            max-width: 70%;
+            display: inline-block;
         }
         .chat-message.user1 {
             background-color: #007bff;
             color: white;
             text-align: left;
+            align-self: flex-start;
         }
         .chat-message.user2 {
-            background-color: #f1f1f1;
+            background-color: #e9ecef;
             text-align: right;
+            align-self: flex-end;
+        }
+        .chat-message.user1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #007bff;
+        }
+        .chat-message.user2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #e9ecef;
         }
     </style>
 </head>
 <body>
     <div class="container chat-container">
-        <h2 class="text-center">Chat UI</h2>
-        <div class="chat-box" id="chatBox">
+        <h2 class="text-center p-3">Chat UI</h2>
+        <div class="chat-box d-flex flex-column" id="chatBox">
             <!-- Messages will be appended here -->
         </div>
         <div class="input-group chat-input">
