@@ -20,6 +20,15 @@
                 margin-left: 0;
             }
         }
+        @media (max-width: 576px) {
+            .navbar {
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-link {
+                padding: 15px 0;
+            }
+        }
     </style>
 </head>
 <body>
