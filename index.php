@@ -29,6 +29,32 @@
                 padding: 15px 0;
             }
         }
+        .chatbox {
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            width: 300px;
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .chatbox-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .chatbox-body {
+            display: none;
+            background-color: white;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .chatbox-footer {
+            display: none;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -70,9 +96,41 @@
             </footer>
         </div>
     </div>
+    
+    <!-- Chatbot UI -->
+    <div class="chatbox">
+        <div class="chatbox-header">
+            Chat with us!
+        </div>
+        <div class="chatbox-body">
+            <div class="p-3">
+                <div class="d-flex justify-content-start mb-2">
+                    <div class="p-2 bg-light rounded">Hello! How can I help you?</div>
+                </div>
+                <!-- Messages will be appended here -->
+            </div>
+        </div>
+        <div class="chatbox-footer">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type a message...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelector('.chatbox-header').addEventListener('click', function() {
+            const chatboxBody = document.querySelector('.chatbox-body');
+            const chatboxFooter = document.querySelector('.chatbox-footer');
+            chatboxBody.style.display = chatboxBody.style.display === 'block' ? 'none' : 'block';
+            chatboxFooter.style.display = chatboxFooter.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
 </body>
 </html>
