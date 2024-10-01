@@ -128,8 +128,9 @@
         document.querySelector('.chatbox-header').addEventListener('click', function() {
             const chatboxBody = document.querySelector('.chatbox-body');
             const chatboxFooter = document.querySelector('.chatbox-footer');
-            chatboxBody.style.display = chatboxBody.style.display === 'block' ? 'none' : 'block';
-            chatboxFooter.style.display = chatboxFooter.style.display === 'block' ? 'none' : 'block';
+            const isVisible = chatboxBody.style.display === 'block';
+            chatboxBody.style.display = isVisible ? 'none' : 'block';
+            chatboxFooter.style.display = isVisible ? 'none' : 'block';
         });
     </script>
 </body>
