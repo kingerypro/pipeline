@@ -6,10 +6,25 @@
     <title>Pipeline Dashboard</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                height: auto;
+            }
+            .navbar-brand, .nav-link {
+                text-align: center;
+                padding: 10px 0;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="d-flex">
-        <nav class="navbar navbar-dark bg-dark flex-column" style="width: 250px; height: 100vh;">
+        <nav class="navbar navbar-dark bg-dark flex-column">
             <a class="navbar-brand" href="#">Pipeline Dashboard</a>
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -26,7 +41,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="container-fluid">
+        <div class="container-fluid main-content">
             <header class="bg-dark text-white text-center p-3">
                 <h1>Welcome to the Pipeline Dashboard</h1>
             </header>
