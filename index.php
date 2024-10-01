@@ -43,12 +43,12 @@
             padding: 10px 20px;
             text-align: center;
         }
-        .cards {
+        .files {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
         }
-        .card {
+        .file {
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -79,19 +79,16 @@
         <header>
             <h1>Welcome to the Pipeline Dashboard</h1>
         </header>
-        <div class="cards">
-            <div class="card">
-                <h3>Card 1</h3>
-                <p>Content for card 1</p>
-            </div>
-            <div class="card">
-                <h3>Card 2</h3>
-                <p>Content for card 2</p>
-            </div>
-            <div class="card">
-                <h3>Card 3</h3>
-                <p>Content for card 3</p>
-            </div>
+        <div class="files">
+            <?php
+                $directory = '.'; // Change this to your desired directory
+                $files = scandir($directory);
+                foreach ($files as $file) {
+                    if ($file !== '.' && $file !== '..') {
+                        echo "<div class='file'><h3>$file</h3></div>";
+                    }
+                }
+            ?>
         </div>
         <footer>
             <p>Pipeline &copy; 2024</p>
